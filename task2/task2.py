@@ -15,14 +15,17 @@ def getData(data):
 def inCircle():
     circleData = getData(sys.argv[1])
     pointsData = getData(sys.argv[2])
+    result = ''
     for points in pointsData:
         equation = (points[0] - circleData[0][0])**2 + (points[1] - circleData[0][1])**2
         if equation == circleData[1][0] * circleData[1][0]:
-            print(0)
+            result = result + '0 '
         if equation < circleData[1][0] * circleData[1][0]:
-            print(1)
+            result = result + '1 '
         if equation > circleData[1][0] * circleData[1][0]:
-            print(2)
+            result = result + '2 '
+
+    print(result[:-1])
 
 
 inCircle()
